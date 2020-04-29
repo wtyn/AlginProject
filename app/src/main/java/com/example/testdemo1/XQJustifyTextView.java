@@ -1,5 +1,6 @@
 package com.example.testdemo1;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.text.Layout;
@@ -27,6 +28,7 @@ import java.util.Objects;
  *
  * @author panxuqin
  */
+@SuppressLint("AppCompatCustomView")
 public class XQJustifyTextView extends TextView {
 
     private static final String TAG = XQJustifyTextView.class.getSimpleName();
@@ -377,7 +379,6 @@ public class XQJustifyTextView extends TextView {
         if (TextUtils.isEmpty(text)) {
             return new ArrayList<>();
         }
-        Log.i(TAG, "getWordList ");
         List<String> frontList = new ArrayList<>();
         StringBuilder str = new StringBuilder();
         for (int i = 0; i < text.length(); i++) {

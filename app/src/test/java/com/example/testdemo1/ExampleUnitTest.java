@@ -2,6 +2,9 @@ package com.example.testdemo1;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 /**
@@ -13,5 +16,15 @@ public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
+
+        List<String> abc = new ArrayList<>();
+        for (int i = 0; i < 10; i ++){
+            abc.add(i+"");
+        }
     }
+
+
+
+
+
 }
