@@ -6,11 +6,18 @@ import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.DynamicDrawableSpan;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.testdemo1.font.FontsFactory;
+
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 

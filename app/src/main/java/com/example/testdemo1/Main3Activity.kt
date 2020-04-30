@@ -1,14 +1,12 @@
 package com.example.testdemo1
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.testdemo1.font.FontsFactory
-import kotlinx.android.synthetic.main.activity_main2.*
 import java.security.AccessController.getContext
 
-class Main2Activity : AppCompatActivity() {
+class Main3Activity : AppCompatActivity() {
 
     private val text1 = "意大abced利面条有很多的做法，其实主要是酱汁起决定性作用，和中国的打卤面差不多和中国的打卤面差不多和中国的打卤面差不多和中意大利面条有很多的做法，意大abced利面条有很多的做法，其实主要是酱汁起决定性作用，和中国的打卤面差不多和中国的打卤面差不多和中国的打卤面差不多和中意大利面条有很多的做法"
 
@@ -24,13 +22,15 @@ class Main2Activity : AppCompatActivity() {
         seeMoreView.setContentText(text1)
 
 
-        showMoreTV2.setContentText(text2)
+
+
+
+//        showMoreTV2.setContentText(text2)
 
     }
 
 
     fun onFinishActivity(view: View){
-//        startActivity(Intent(this, Main3Activity::class.java))
         finish()
     }
 

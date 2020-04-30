@@ -1,11 +1,12 @@
 package com.example.testdemo1
 
 import android.content.Context
-import android.graphics.Canvas
+import android.graphics.Typeface
 import android.util.AttributeSet
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
+import com.example.testdemo1.font.FontsFactory
 
 /**
  * 作者：wanyu.wang
@@ -30,6 +31,7 @@ class ShowMoreTextView: RelativeLayout {
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
 
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+
         View.inflate(context, R.layout.view_justify_see_more, this)
 
         showMoreLL = findViewById(R.id.showMoreLL)
@@ -41,6 +43,7 @@ class ShowMoreTextView: RelativeLayout {
             contentTextView.requestLayout()
         }
 
+        setTypeFace(null)
     }
 
     override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
@@ -57,6 +60,10 @@ class ShowMoreTextView: RelativeLayout {
         contentTextView.text = text
     }
 
+
+    fun setTypeFace(typeface: Typeface?){
+        contentTextView.typeface = typeface?: FontsFactory.newInstance(context).obtainMYingHeiPRC_W3Fonts()
+    }
 
 
 }

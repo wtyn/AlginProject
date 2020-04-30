@@ -97,6 +97,10 @@ public class FontsFactory {
         return w7;
     }
 
+    public static void initData(Context context){
+        FontsFactory.newInstance(context).obtainMYingHeiPRC_W3Fonts();
+    }
+
     public Typeface obtainMYingHeiPRC_W8Fonts() {
         if (w7 == null) {
             w7 = Typeface.createFromAsset(

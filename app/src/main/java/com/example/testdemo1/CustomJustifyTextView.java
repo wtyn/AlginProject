@@ -167,10 +167,6 @@ public class CustomJustifyTextView extends TextView {
 
     public CustomJustifyTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-
-        //设置字体
-        setTypeface(FontsFactory.newInstance(getContext()).obtainMYingHeiPRC_W3Fonts());
-
     }
 
 
@@ -188,7 +184,6 @@ public class CustomJustifyTextView extends TextView {
         paddingTop = getPaddingTop();
         paddingBottom = getPaddingBottom();
         mViewWidth = measuredWidth - paddingStart - paddingEnd;
-
 
         if (!isShowMore) {
 
@@ -209,8 +204,10 @@ public class CustomJustifyTextView extends TextView {
 
         if (mParagraphLineList == null){
             getParagraphList();
-            for (List<String> frontList : mParagraphWordList) {
-                mParagraphLineList.add(getLineList(frontList));
+            if ( mParagraphWordList!= null){
+                for (List<String> frontList : mParagraphWordList) {
+                    mParagraphLineList.add(getLineList(frontList));
+                }
             }
         }
 
@@ -218,12 +215,13 @@ public class CustomJustifyTextView extends TextView {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        if (isSpan()) {
+
+        if (mParagraphLineList == null || mParagraphWordList == null || isSpan()) {
             super.onDraw(canvas);
             return;
         }
 
-        Log.d("xxxx", "=====");
+        Log.d("xxxx", "==onDraw===");
 
         TextPaint paint = getPaint();
         paint.setColor(getCurrentTextColor());
@@ -239,6 +237,7 @@ public class CustomJustifyTextView extends TextView {
         textGravity = getTextGravity();
 
         adjust(canvas, paint);
+
     }
 
     /**
